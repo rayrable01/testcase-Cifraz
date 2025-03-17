@@ -1,0 +1,19 @@
+#root {
+  max-width: 1630px;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.Favorites__link {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Favorites__link:hover {
+  color: blue
+}
