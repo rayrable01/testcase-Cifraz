@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { MainProvider} from './Provider/MainContext'
-import { BookList } from './ui/BookList/BookList'
-import { Favorites } from './ui/Favorites/Favorites'
+import { UsersList } from './ui/UsersList/UsersList'
 
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
     <MainProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<BookList />} />
-          <Route path='/favorites' element={<Favorites />} />
+          <Route path='/' element={<UsersList />} />
         </Routes>
       </BrowserRouter>
     </MainProvider>

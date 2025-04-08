@@ -1,17 +1,13 @@
-import { createContext, FC, ReactNode, useState } from "react";
-import { useBooksList } from "../hooks/useBooksList";
-import { BookArrayType} from "../types/BookType";
+import { createContext, FC, ReactNode } from "react";
+import { useUsersList } from "../hooks/useUsersList";
+import { UserArrayType} from "../types/UserType";
 
 interface MainContextType {
     data: {
-        data: BookArrayType,
+        data: UserArrayType,
         isLoading: boolean,
         isError: boolean,
     },
-    price: number,
-    favorites: BookArrayType,
-    setFavorites: React.Dispatch<React.SetStateAction<BookArrayType>>;
-
 }
 
 export const MainContext = createContext<MainContextType | null>(null);
@@ -22,17 +18,12 @@ interface MainProviderProps {
 }
 
 export const MainProvider: FC<MainProviderProps> = ({children}) => {
-    const data = useBooksList();
-    const [favorites, setFavorites] = useState<BookArrayType>([]);
-    const price = 1000;
+    const data = useUsersList();
 
 
     return (
         <MainContext.Provider value={{
             data,
-            price,
-            favorites,
-            setFavorites,
             }}>
             {children}
         </MainContext.Provider>
